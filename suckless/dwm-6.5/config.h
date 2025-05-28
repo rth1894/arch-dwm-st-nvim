@@ -71,9 +71,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 
 // terminal, browser
 static const char *termcmd[]  = { "st", NULL };
-static const char *bravecmd[]  = { "brave", NULL };
 static const char *braveincogcmd[]  = { "brave", "--incognito", NULL };
-static const char *firefoxcmd[]  = { "firefox", NULL };
+static const char *bravecmd[]  = { "brave", NULL };
 
 // shutdown, reboot
 static const char *shutdowncmd[]  = { "systemctl", "poweroff", NULL };
@@ -89,9 +88,9 @@ static const char *clipboard[] = { "/bin/sh", "-c", "maim | xclip -selection cli
 static const char *save[] = { "/bin/sh", "-c", "maim ~/Pictures/$(date +%F-%H_%M_%S).png", NULL };
 
 // volume
-static const char *volumeplus[]  = { "amixer", "-D", "pulse", "sset", "Master", "5%+", NULL };
-static const char *volumeminus[]  = { "amixer", "-D", "pulse", "sset", "Master", "5%-", NULL };
-static const char *volumemute[]  = { "amixer", "-D", "pulse", "sset", "Master", "0%", NULL };
+static const char *volumeplus[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *volumeminus[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+static const char *volumemute[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "0%", NULL };
 
 // file manager (thunar)
 static const char *filemgr[]  = { "thunar", ".", NULL };
@@ -102,9 +101,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,                   spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,              spawn,          {.v = termcmd } },
 
-	{ MODKEY,                       XK_b,                   spawn,          {.v = bravecmd } },
+	{ MODKEY,                       XK_b,                   spawn,          {.v = bravecmd} },
 	{ MODKEY|ShiftMask,             XK_i,                   spawn,          {.v = braveincogcmd } },
-	{ MODKEY|ShiftMask,             XK_f,                   spawn,          {.v = firefoxcmd} },
 	{ Mod1Mask,                     XK_s,                   spawn,          {.v = shutdowncmd} },
 	{ Mod1Mask,                     XK_r,                   spawn,          {.v = rebootcmd} },
 
