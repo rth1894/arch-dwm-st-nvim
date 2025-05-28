@@ -18,3 +18,6 @@
 ---
 ## Editor (nvim)
 - config
+---
+## Setup
+![Preview](setup.png)
