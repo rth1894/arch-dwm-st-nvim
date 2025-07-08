@@ -53,5 +53,5 @@ fi
 dwmbar &
 xcompmgr &
 picom --config ~/.config/picom/picom.conf &
-feh --bg-scale wall.jpg &
+feh --bg-scale wall2_1.png &
 exec dwm
