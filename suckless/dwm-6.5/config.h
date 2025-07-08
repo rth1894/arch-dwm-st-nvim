@@ -15,10 +15,11 @@ static const char *fonts[]          = { "DroidSansMono:size=16" };
 static const char dmenufont[]       = "DroidSansMono:size=16";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
+static const char thunder_blue[]    = "#90ffff";
+static const char sky_red[]         = "#ff5550";
 static const char col_gray4[]       = "#eeeeee";
 static const char castlepink[]      = "#feafa8";
-static const char castlegreen[]     = "#112120";
+static const char castlegreen[]     = "#010113";
 static const char castlemoon[]      = "#f5fded";
 static const char white[]           = "#ffffff";
 
@@ -67,7 +68,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 
 /* define keybinds */
 // dmenu
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", castlegreen, "-nf", col_gray3, "-sb", col_gray1, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", castlegreen, "-nf", thunder_blue, "-sb", col_gray1, "-sf", sky_red, NULL };
 
 // terminal, browser
 static const char *termcmd[]  = { "st", NULL };
@@ -90,7 +91,7 @@ static const char *save[] = { "/bin/sh", "-c", "maim ~/Pictures/$(date +%F-%H_%M
 // volume
 static const char *volumeplus[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *volumeminus[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
-static const char *volumemute[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "0%", NULL };
+static const char *volumemute[]  = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
 // file manager (thunar)
 static const char *filemgr[]  = { "thunar", ".", NULL };
