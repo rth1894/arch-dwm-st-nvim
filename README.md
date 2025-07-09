@@ -20,4 +20,4 @@
 - config
 ---
 ## Setup
-![Preview](setup.png)
+![Preview](setup_new.png)
