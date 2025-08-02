@@ -1,6 +1,8 @@
 ## Linux
-- .bashrc
-- .xinitrc
+- .bashrc (old)
+- .xinitrc (old)
+- .zshrc (yay!)
+- .xinitrc (yay!)
 - wallpaper
 - fonts
 - aur list
@@ -20,4 +22,4 @@
 - config
 ---
 ## Setup
-![Preview](setup_new.png)
+![Preview](images/setup_new_final.png)
