@@ -8,7 +8,7 @@
 - aur list
 - pkg list
 ---
-## Terminal (st)
+## Terminal (ghostty)
 - config
 ---
 ## Window manager (DWM)
