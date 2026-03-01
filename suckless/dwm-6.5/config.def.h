@@ -11,8 +11,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "DroidSansMono:size=13" };
-static const char dmenufont[]       = "DroidSansMono:size=13";
+static const char *fonts[]          = { "DroidSansMono:size=16" };
+static const char dmenufont[]       = "DroidSansMono:size=16";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char thunder_blue[]    = "#90ffff";
@@ -20,15 +20,14 @@ static const char sky_red[]         = "#ff5550";
 static const char col_gray4[]       = "#eeeeee";
 static const char castlepink[]      = "#e15c63";
 static const char castlegreen[]     = "#010113";
-static const char castleblack[]     = "#000000";
 //static const char castlemoon[]      = "#f5fded";
 static const char castlemoon[]      = "#90ffff";
 static const char white[]           = "#ffffff";
 
 static const char *colors[][3]      = {
 	/*               fg          bg           border   */
-	[SchemeNorm] = { castlepink, castleblack, castleblack},
-	[SchemeSel]  = { castlemoon, castleblack, castleblack},
+	[SchemeNorm] = { castlepink, castlegreen, castlegreen},
+	[SchemeSel]  = { castlemoon, castlegreen, castlegreen},
 };
 
 /* tagging */

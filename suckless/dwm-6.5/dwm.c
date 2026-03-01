@@ -1051,6 +1051,9 @@ manage(Window w, XWindowAttributes *wa)
 	} else {
 		c->mon = selmon;
 		applyrules(c);
+        if (c->tags && !(c->tags & selmon->tagset[selmon->seltags])) {
+            selmon->tagset[selmon->seltags] = c->tags;
+        }
 	}
 
 	if (c->x + WIDTH(c) > c->mon->wx + c->mon->ww)
