@@ -45,12 +45,12 @@ if [ -d $xinitdir/xinitrc.d ] ; then
   [ -x "$f" ] && . "$f"
  done
  unset f
- feh --bg-scale ~/wall2_1.png
+ feh --bg-scale ~/adam.png
 fi
 
-/usr/bin/pipewire &
-/usr/bin/pipewire-pulse &
-/usr/bin/pipewire-media-session &
+# /usr/bin/pipewire &
+# /usr/bin/pipewire-pulse &
+# /usr/bin/pipewire-media-session &
 dwmbar &
 xcompmgr &
 picom --config ~/.config/picom/picom.conf &

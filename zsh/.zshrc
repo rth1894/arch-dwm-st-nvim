@@ -61,7 +61,18 @@ setopt hist_find_no_dups
 zstyle ':completion:*' menu no
 
 alias ls='eza'
+alias la='eza -lah'
+alias s='eza'
+alias d='cd $(fd -t d . ~ | fzf)'
 alias camera='guvcview'
 alias ll='eza -l --color=auto'
 alias grep='grep --color=auto'
 alias nf='selected=$(rg --files --hidden | fzf --preview "bat {} --color=always" --bind "ctrl-h:toggle-preview") && [ -n "$selected" ] && nvim "$selected"'
+alias video='kdenlive'
+alias helium='./Downloads/helium.AppImage'
+
+# OS
+export PREFIX="$HOME/opt/cross"
+export TARGET=i686-elf
+export PATH="$PREFIX/bin:$PATH"
+

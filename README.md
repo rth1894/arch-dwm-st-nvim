@@ -22,4 +22,4 @@
 - config
 ---
 ## Setup
-![Preview](images/setup_new_final.png)
+![Preview](images/setup_new_final_final.png)
