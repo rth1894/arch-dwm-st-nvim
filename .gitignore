@@ -1,0 +1,8 @@
+dwm
+*.o
+Untitled.jpg
+*.json
+
+*.orig
+*.rej
+*.diff
