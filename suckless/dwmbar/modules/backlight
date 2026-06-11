@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Prints the backlight percentage
+# Requires the light package
+
+PREFIX='ﯧ'
+
+get_backlight()
+{
+	echo "$PREFIX $(brightnessctl g)"
+}
+
+get_backlight

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Gets the wifi status
+
+WIFI_ICON=' '
+NO_WIFI_ICON='󱚵 '
+ETH_ICON=' '
+
+NAME=$(nmcli -t -f name connection show --active | awk '{print $1}' | head -n 1)
+
+get_wifi()
+{
+        if [ "$NAME" == "lo" ]; then
+                # Loopback interface (no connection)
+		echo "  $NO_WIFI_ICON X  "
+        elif [ -z "$NAME" ]; then
+                # No name present, edge case?
+		echo "  $NO_WIFI_ICON X  "
+        elif [ "$NAME" == "Wired" ]; then
+                # Internet through phone (usb), lan (not tested)
+		echo "  $ETH_ICON $NAME  "
+        else
+                # Hotspot or itar
+		echo "  $WIFI_ICON $NAME  "
+        fi
+}
+
+get_wifi
