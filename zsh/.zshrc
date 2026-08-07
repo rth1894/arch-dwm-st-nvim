@@ -39,7 +39,8 @@ zinit cdreplay -q
 bindkey -v
 export KEYTIMEOUT=1
 bindkey ';' autosuggest-accept
-bindkey '^p' history-search-backward
+bindkey -M viins '^[[59;5u' forward-word
+bindkey '^b' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 bindkey -M viins '^R' history-incremental-search-backward
@@ -71,8 +72,11 @@ alias nf='selected=$(rg --files --hidden | fzf --preview "bat {} --color=always"
 alias video='kdenlive'
 alias helium='./Downloads/helium.AppImage'
 
+alias rmclip='rm -rf "$XDG_RUNTIME_DIR/clipmenu.6.$USER"/*'
+
+alias brawl='steam steam://rungameid/291550'
+
 # OS
 export PREFIX="$HOME/opt/cross"
 export TARGET=i686-elf
-export PATH="$PREFIX/bin:$PATH"
-
+export PATH="$HOME/.local/bin:$PATH"
