@@ -37,11 +37,13 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* class                      instance      title        tags mask        isfloating      monitor */
+    { "zenity",                     NULL,        NULL,        0,                   1,           -1 },
 	{ "com.mitchellh.ghostty",      NULL,        NULL,        1 << 0,              0,           -1 },
 	{ "Brave-browser",              NULL,        NULL,        1 << 1,              0,           -1 },
     { "firefox",                    NULL,        NULL,        1 << 2,              0,           -1 },
-    { "Zathura",                    NULL,        NULL,        1 << 3,              0,           -1 },
+    { "org.pwmt.zathura",           NULL,        NULL,        1 << 3,              0,           -1 },
     { "Gimp",                       NULL,        NULL,        1 << 4,              0,           -1 },
+    { "Stremio",                    NULL,        NULL,        1 << 5,              0,           -1 },
 };
 
 /* layout(s) */
@@ -102,12 +104,21 @@ static const char *volumemute[]  = { "pactl", "set-sink-mute", "@DEFAULT_SINK@",
 // file manager (thunar)
 static const char *filemgr[]  = { "thunar", ".", NULL };
 
+// lockscreen
 static const char *bls[]  = { "betterlockscreen", "-l" , NULL };
+
+// clipboard
+static const char *clipmenucmd[] = { "sh", "-c", "clipmenu && xdotool key --clearmodifiers ctrl+shift+v", NULL };
+
+// stremio
+static const char *stremiocmd[] = { "com.stremio.Stremio", NULL };
+
 
 // keybinds
 static const Key keys[] = {
 	/* modifier                     key                     function        argument */
 	{ MODKEY,                       XK_d,                   spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_c,                   spawn,          {.v = clipmenucmd} },
 	{ MODKEY,                       XK_Return,              spawn,          {.v = termcmd } },
 
 	{ MODKEY,                       XK_f,                   spawn,          {.v = firecmd} },
@@ -129,7 +140,9 @@ static const Key keys[] = {
 
 	{ MODKEY,                       XK_e,                   spawn,          {.v = filemgr} },
 	{ MODKEY,                       XK_x,                   spawn,          {.v = bls} },
-	
+
+	{ MODKEY,                       XK_w,                   spawn,          {.v = stremiocmd} },
+
 	{ MODKEY|ShiftMask,             XK_b,                   togglebar,      {0} },
 	{ MODKEY,                       XK_j,                   focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                   focusstack,     {.i = -1 } },
