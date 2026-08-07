@@ -1,12 +1,10 @@
 ## Linux
 - .bashrc (old)
 - .xinitrc (old)
-- .zshrc (yay!)
-- .xinitrc (yay!)
+- .zshrc
+- .xinitrc
 - wallpaper
 - fonts
-- aur list
-- pkg list
 ---
 ## Terminal (ghostty)
 - config
