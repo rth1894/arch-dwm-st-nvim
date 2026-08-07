@@ -47,11 +47,12 @@ if [ -d $xinitdir/xinitrc.d ] ; then
  unset f
  feh --bg-scale ~/adam.png
 fi
-
 # /usr/bin/pipewire &
 # /usr/bin/pipewire-pulse &
 # /usr/bin/pipewire-media-session &
 dwmbar &
 xcompmgr &
 picom --config ~/.config/picom/picom.conf &
+clipmenud &
+~/.local/bin/check_aur.sh >/dev/null 2>&1 &
 exec dwm
